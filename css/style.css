@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
+
+body, div {
+    font-family: 'Maven pro', sans-serif;
+}
+
+p {
+    text-align: center; 
+    margin-bottom: 40%;
+    margin-top: 10%;
+    color: #7F7F7F;
+}
+
+*{
+    margin:0;
+}
+
+img{
+    margin:auto;
+    max-height:100%; 
+    width:auto;
+}
+
+/* --------------- Login and registration css --------------- */
+
+.btnLog, #btnLog{
+    background-color: #81bc4a !important; 
+    color: white !important;
+}
+
+.btnRegister{
+    background-color: #81bc4a !important; 
+    color: white !important;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+#messageNewPwd{
+    text-align: center;
+}
+
+.foot{
+    background-color: white;
+}
+
+.liens{
+    text-align: center; 
+    padding: 5%;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.dog-profile .ui-field-contain {
+    border-bottom: none !important;
+}
+
+.dog-profile .ui-field-contain img{
+    margin-bottom: 0; 
+}
+
+#modifyInfo button{
+    background-color: #81bc4a;
+    color: white;
+}
+
+.healtInfo p {
+    text-align: justify;
+    margin: 10px;
+}
+
+.msgPanel {
+    margin-top: 10px;
+    margin-bottom: 0;
+    border: solid 1px #990000;
+    border-radius: 4px;
+    padding: 10px;
+    display: none;
+}
+
+.logError {
+    color: #990000;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
+
+/* --------------- prevent all the focus design --------------- */
+a {
+    text-decoration: none;
+    text-align: inherit !important;
+    border :none !important;
+ }
+ 
+ a:hover, a:focus, a:active, a:visited, .ui-page-theme-a .ui-btn.ui-btn-active {
+     background-color: #f6f6f6 !important;
+     border :none !important;
+
+ }
+ 
+ *:focus {
+     outline: none !important;
+     box-shadow: none !important;
+     border-color: transparent!important;
+ }
+ 
+ textarea:focus, input:focus {
+    outline: none !important;
+ }
+ 
+ .ui-page-theme-a .ui-focus{
+      box-shadow: none !important;
+ }
+
+
+/* --------------- navbar --------------- */
+
+.navbar ul, .navbar li {
+    display: flex;
+    max-height: 15vh
+}
+
+.navbar a {
+    width: 100%;
+}
+
+#logo img {
+     width: 100%;
+}
+
+
+#dog-pp img {
+    /* TO CHANGE !!!!!!!!!!! IMAGE MUST BE CROP AS A SQUARE OR A ROUND AND RESIZED WHEN UPLOADED !!!!!!!!! */
+    object-fit: cover;
+    border-radius: 100%;
+    width: 65px;
+    height: 65px
+}
+
+
+#hamburger {
+    text-align: right !important;
+}
+
+.navbar-1 #hamburger img {
+    margin: 8.5% 10% 6.5%;
+    width: 20%;
+}
+
+.navbar-2 #hamburger img {
+    margin: 12.5% 10% 6.5%;
+    width: 40%;
+}
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d894f387bbbf5f31c783323324573dcd173dfae
+.page-title {
+    text-align: center !important;
+    padding: 2px !important;
+    font-family: 'Maven pro', sans-serif;
+    font-size: 1.6em !important;
+    white-space: normal;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.page-title-link {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d894f387bbbf5f31c783323324573dcd173dfae
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #logo img {
+        width: 50%;
+    }
+    
+    .navbar-1 #hamburger img {
+        margin: 4.5% 5% 3.5%;
+        width: 10%;
+    }
+    
+    .navbar-2 #hamburger img {
+        margin: 6.5% 5% 3.5%;
+        width: 20%;
+    }
+    
+    #dog-pp img {
+        /* TO CHANGE !!!!!!!!!!! IMAGE MUST BE CROP AS A SQUARE OR A ROUND AND RESIZED WHEN UPLOADED !!!!!!!!! */
+        object-fit: cover;
+        border-radius: 100%;
+        width: 100px;
+        height: 100px
+    }
+} 
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d894f387bbbf5f31c783323324573dcd173dfae
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .navbar ul, .navbar li {
+        display: flex;
+        max-height: 30vh;
+    }
+    
+    #logo img {
+        width: 30%;
+        margin: 2%;
+    }
+    
+    .navbar-1 #hamburger img {
+        margin: 2.5%;
+        width: 10%;
+        -webkit-transition: width 1s, margin 1s; /* Safari */
+        transition: width 1s, margin 1s;
+    }
+    
+    .navbar-1 #hamburger img:hover {
+        width: 9%;
+        margin: 3%;
+    }    
+    
+    .navbar-2 #hamburger img {
+        margin: 4%;
+        width: 15%;
+         -webkit-transition: width 1s, margin 1s; /* Safari */
+        transition: width 1s, margin 1s;
+    }
+    
+    .navbar-2 #hamburger img:hover {
+        width: 14%;
+        margin: 4.5%;
+    }    
+    
+    #dog-pp img {
+        /* TO CHANGE !!!!!!!!!!! IMAGE MUST BE CROP AS A SQUARE OR A ROUND AND RESIZED WHEN UPLOADED !!!!!!!!! */
+        object-fit: cover;
+        border-radius: 100%;
+        width: 90px;
+        height: 90px;
+        margin:2%;
+    }
+    
+    .page-title {
+        font-size: 2em !important;
+    }
+} 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1d894f387bbbf5f31c783323324573dcd173dfae
+
+/* --------------- panel (top right menu) design --------------- */
+
+ .ui-page-theme-a .ui-body-inherit, .ui-page-theme-a .ui-btn.ui-btn-active {
+     background-color: #f6f6f6 !important;
+ }
+ 
+ .ui-panel {
+     width: 11em !important;
+ }
+
+
+/* --------------- dog_page.html --------------- */
+
+.dog-page {
+    text-align: center;
+    font-family: 'Maven Pro', sans-serif;
+    margin: auto;
+}
+
+.dog-page div {
+    width: 50%;
+    float: left;
+    margin-top: 5vh;
+}
+
+.dog-page img {
+    height: 15vh;
+}
+
+
+/* --------------- main_page.html --------------- */
+
+.select-dog {
+    text-align: center;
+}
+
+.select-dog div {
+    margin : 8vh;
+}
+
+.select-dog h2 {
+    margin-block-start: 1;
+    margin-block-end: 0;
+    color: #7f7f7f;
+}
+
+.select-dog img, .dog-profile img {
+    /* TO CHANGE !!!!!!!!!!! IMAGE MUST BE CROP AS A SQUARE OR A ROUND AND RESIZED WHEN UPLOADED !!!!!!!!! */
+    object-fit: cover;
+    border-radius: 100%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+
+/* --------------- health-page.html --------------- */
+
+.health-button {
+    text-align: center;
+}
+
+.health-button div {
+    width: 50%;
+    float: left;
+}
+
+.health-button h2 {
+    margin-block-start: 1;
+    margin-block-end: 0;
+    color: #7f7f7f;
+}
+
+.health-button img {
+    /* TO CHANGE !!!!!!!!!!! IMAGE MUST BE CROP AS A SQUARE OR A ROUND AND RESIZED WHEN UPLOADED !!!!!!!!! */
+    object-fit: cover;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px
+}
+    
+/* --------------- vet-around.html --------------- */
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+}
+
+.gmap_canvas iframe {
+    height: 65vh;
+    width: 100vw;
+}

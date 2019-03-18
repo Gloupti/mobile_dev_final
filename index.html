@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dog for Starter App</title>
+    <!-- Content security Policy -->
+    <meta http-equiv="Content-Security-Policy"
+        content="style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; script-src * data: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; media-src *">
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="initial-scale=1, width=device-width, height=device-height, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- ========================= Jquery Scripts ============================ -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        // Load Panel from external page this (add panel dinamically)
+        jQuery(function() {
+            // Initialize panel() by calling enhanceWithin methods
+            $('#menu_panel').enhanceWithin().panel();
+        });
+    </script>
+    
+</head>
+
+<body>
+
+    <div data-role="page" id="start">
+        <div role="main" class="ui-content">
+            <p><img src="pictures/color_logo.png" alt="favicon" style="height:100px; width:auto;"></p>
+
+            <a id="btnLog" href="#loginAuth" data-role="button">Login</a>
+            <a href="#signUpAuth" data-role="button">Register</a>
+
+        </div><!-- /content -->
+    </div>
+
+    <div data-role="page" id="signUpAuth">
+
+        <div data-role="content" class="ui-content">
+            <p><img src="pictures/favicon.png" alt="favicon" style="height:100px;"></p>
+            <form id="signup-form">
+                <div class="ui-field-contain">
+                    <input type="text" id="signup-username" name="username" placeholder="user name">
+                    <input type="text" id="signup-email" name="eMail" placeholder="email">
+                    <input type="password" id="signup-password" name="password" placeholder="password">
+                    <input type="password" name="passwordConf" placeholder="confirm password">
+                    <button id="btnSignup" class="btnRegister" type="submit">Register</button>
+                    <div class="logError msgPanel"></div>
+                </div>
+            </form>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" class="foot" style="background-color: white;">
+            <div class="liens" style="text-align: center; padding: 5%;">
+                <a href="#loginAuth" style=" padding-right: 5%;">Already a member?</a>
+            </div>
+        </div><!-- /footer -->
+    </div>
+
+    <div data-role="page" id="loginAuth">
+
+        <div data-role="content" class="ui-content">
+            <p><img src="pictures/favicon.png" alt="favicon"></p>
+            <form id="login-form">
+                <div class="ui-field-contain">
+                    <!--<input type="text" id="username" name="username" placeholder="Username">-->
+                    <input type="text" id="login-email" name="email" placeholder="Email">
+                    <input type="password" id="login-password" name="password" placeholder="password">
+                </div>
+                <button id="btnLogin" class="btnLog" type="submit">Login</button>
+                <div class="logError msgPanel"></div>
+            </form>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" style="background-color: white;">
+            <div class="liens" style="text-align: center; padding: 5%;">
+                <a href="#signUpAuth" style=" padding-right: 5%;">New User?</a>
+                <a href="#forgotPassPage">Password Forgotten?</a>
+            </div>
+        </div><!-- /footer -->
+    </div>
+
+    <div data-role="page" id="forgotPassPage">
+
+        <div role="main" class="ui-content">
+            <p><img src="pictures/favicon.png" alt="favicon"></p>
+            <form action="">
+                <label for="emailNewPwd"> Get a new Password</label>
+                <input type="text" name="emailNewPwd" id="" placeholder="email">
+                <a href="#sendNewPassPage" data-role="button">Send</a>
+            </form>
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <div class="liens">
+                <a href="#loginAuth">Go back to Login</a>
+
+            </div>
+        </div><!-- /footer -->
+    </div>
+
+    <div data-role="page" id="sendNewPassPage">
+
+        <div id="messageNewPwd" role="main" class="ui-content">
+            <p><img src="pictures/favicon.png" alt="favicon"></p>
+            <p> A new password has been sent to you.<br> Check your mail!</p>
+            <a href="#start">return</a>
+        </div><!-- /content -->
+
+    </div>
+
+    <div data-role="page" id="mainPage">
+
+        <!----------------------------- NAVBAR 1 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-1" data-position="fixed">
+                <ul>
+                    <li><a id="logo" href="#mainPage"><img src="pictures/color_logo.png" alt="Main Page" /></a></li>
+                    <li><a role="button" id="hamburger" href="#menu_panel"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 1 ------------------------------>
+
+        <div data-role="content" class="ui-content">
+
+            <div class="select-dog">
+                <div class="dogImgName"></div>
+                <div>
+                    <a href="#newDog"><img src="pictures/plus.png" alt="New Dog"/>
+                        <h2>Add a dog</h2>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="healthPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="" class="page-title-link">
+                            <p class="page-title">Health</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+
+            <div data-role="collapsibleset" data-theme="a" data-content-theme="a" class="healtInfo">
+            </div>
+
+            <br><br>
+            <br>
+
+            <div class="health-button">
+                <div>
+                    <a href="#medReminderPage"><img src="pictures/clock.png" alt="Med reminder"/>
+                        <h2>Medication reminder</h2>
+                    </a>
+                </div>
+                <div>
+                    <a href="#vetAroundPage"><img src="pictures/map.png" alt="Menu"/>
+                        <h2>Vet around your</h2>
+                    </a>
+                </div>
+            </div>
+
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+    </div>
+
+    <div data-role="page" id="dogPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="" class="page-title-link">
+                            <p class="page-title"></p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="..." /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+
+            <div class="dog-page">
+                <div>
+                    <a href="#healthPage"><img src="pictures/health_icon.png" alt="health" />
+                        <p>Health</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="#activityPage"><img src="pictures/activities_icon.png" alt="activity" />
+                        <p>Activity</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="feeding" />
+                        <p>Feeding</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="#raisingPage"><img src="pictures/raise_icon.png" alt="raising" />
+                        <p>Raising</p>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#healthGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="dogProfile">
+
+        <div data-role="panel" id="topright-menu" data-display="overlay" data-position="right"
+            data-position-fixed="true"
+            class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-body-inherit ui-panel-animate ui-panel-open">
+
+            <div class="ui-panel-inner">
+                <ul data-role="listview" data-icon="false" class="ui-listview">
+                    <li data-icon="delete"><a href="#" data-rel="close" style=" padding-top: 20%"
+                            class="ui-btn ui-btn-icon-right ui-icon-delete"></a></li>
+                    <li><a href="#accountPage" class="ui-btn">Account</a></li>
+                    <li><a href="#aboutPage" class="ui-btn">About us</a></li>
+                    <li><a href="#helpGuide" class="ui-btn">Help Guide</a></li>
+                    <li><a href="#parameterPage" class="ui-btn">Parameters</a></li>
+                    <li><a href="#" id="btnLogout" class="ui-btn">Log off</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END MENU TOP RIGHT ------------------------------>
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-1" data-position="fixed">
+                <ul>
+                    <li><a id="logo" href="#mainPage"><img src="pictures/color_logo.png" alt="Main Page"/></a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <!-- get all data from databases -->
+
+        <div role="main" class="ui-content">
+            <h1>Dog profile</h1>
+
+            <div class="dogInfo"></div>
+
+            <!--<form class="ui-filterable">
+                Profile picture:
+                <br><br>
+
+                First name:<br>
+                <input type="text" name="firstname" value="">
+                <br>
+
+                Last name:<br>
+                <input type="text" name="lastname" value="">
+                <br>
+
+                Date of birth:<br>
+                <input type="date" name="date" id="date" value="">
+                <br>
+
+                <fieldset data-role="controlgroup">
+                    <legend>Sex:</legend>
+                    <input type="radio" name="sex" id="male" value="choice-1">
+                    <label for="male">Male</label>
+                    <input type="radio" name="sex" id="female" value="choice-2">
+                    <label for="female">Female</label>
+                </fieldset>
+                <br>
+
+                <fieldset data-role="controlgroup">
+                    <legend>Weight:</legend>
+                    <input type="radio" name="weight" id="XS" value="XS">
+                    <label for="XS">1 - 10 lbs → X-Small dog</label>
+                    <input type="radio" name="weight" id="S" value="S">
+                    <label for="S">11 - 25 lbs → Small dog</label>
+                    <input type="radio" name="weight" id="M" value="M">
+                    <label for="M">26 - 40 lbs → Medium dog</label>
+                    <input type="radio" name="weight" id="L" value="L">
+                    <label for="L">41 - 70 lbs → Large dog</label>
+                    <input type="radio" name="weight" id="XL" value="XL">
+                    <label for="XL">71 - 90 lbs → X-Large dog</label>
+                    <input type="radio" name="weight" id="XXL" value="XXL">
+                    <label for="XXL">91 -110 lbs → XX-Large dog</label>
+                </fieldset><br>
+
+                Breed (add several breeds if the dog is mix-breeded, and add no one if you don't know it):<br>
+                <input id="filterBasic-input" data-type="search">
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true"
+                    data-input="#filterBasic-input">
+                    <li><input type="checkbox" name="breed" id="labrador" value="labrador">
+                        <label for="labrador">Labrador</label></li>
+                    <li><input type="checkbox" name="breed" id="pitt-bull" value="pitt-bull">
+                        <label for="pitt-bull">Pitbull</label></li>
+                    <li><input type="checkbox" name="breed" id="teckel" value="teckel">
+                        <label for="teckel">Teckel</label></li>
+                    <li><input type="checkbox" name="breed" id="malinois" value="malinois">
+                        <label for="malinois">Malinois</label></li>
+                </ul><br>
+
+                Particularities:<br>
+                <textarea cols="40" rows="20" name="textarea" id="textarea"></textarea><br>
+
+
+
+                <br><br>
+                <input type="submit" value="Modify" href="#editDogPage">
+                <input type="reset" value="See Menu" href="#dogPage">
+            </form>-->
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="newDog">
+
+        <!----------------------------- NAVBAR 1 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-1" data-position="fixed">
+                <ul>
+                    <li><a id="logo" href="#mainPage"><img src="pictures/color_logo.png" alt="Main Page"/></a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 1 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <h1>Add a new dog</h1>
+
+            <form id="create-newdog-form" class="ui-filterable">
+                First name:<br>
+                <input type="text" id="dogFirstname" name="dogFirstname" value="">
+                <br>
+
+                Last name:<br>
+                <input type="text" id="dogLastname" name="dogLastname" value="">
+                <br>
+
+                Profile picture:<br>
+                <input type="file" class="file-select" id="dogImageTitle" name="dogImageTitle" accept="image/*">
+                <br>
+
+                Date of birth:<br>
+                <input type="date" data-role="date" name="dogDob" id="dogDob">
+                <br>
+
+                <fieldset data-role="controlgroup">
+                    <legend>Sex:</legend>
+                    <select id="dogGender" name="dogGender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </fieldset>
+                <br>
+
+                <fieldset data-role="controlgroup">
+                    <legend>Weight:</legend>
+                    <select id="dogWeight" name="dogWeight">
+                        <option value="XS">1 - 10 lbs → X-Small dog</option>
+                        <option value="S">11 - 25 lbs → Small dog</option>
+                        <option value="M">26 - 40 lbs → Medium dog</option>
+                        <option value="L">41 - 70 lbs → Large dog</option>
+                        <option value="XL">71 - 90 lbs → X-Large dog</option>
+                        <option value="XXL">91 -110 lbs → XX-Large dog</option>
+                    </select>
+                </fieldset><br>
+
+                Breed (add several breeds if the dog is mix-breeded, and add no one if you don't know it):<br>
+                <select id="dogBreed" name="dogBreed">
+                    <option value="labrador">Labrador</option>
+                    <option value="pit-bull">Pitbull</option>
+                    <option value="teckel">Teckel</option>
+                    <option value="malinois">Malinois</option>
+                    <option value="poodle">Poodle</option>
+                </select>
+                <br>
+
+                Particularities:<br>
+                <textarea cols="40" rows="20" name="textarea" id="particularity" name="particularity">
+                </textarea><br>
+
+                <br><br>
+                <button type="submit">Add</button>
+                <input type="reset" value="Cancel" href="#dogPage">
+            </form>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="helpGuide">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="" class="page-title-link">
+                            <p class="page-title">Help Guide</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"<img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <div id="slideshow" >
+                <img src="pictures/Guide/guide1.png" id="guide" alt="" style="max-width: -webkit-fill-available; max-width: -moz-available"/>
+            </div>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="aboutPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#aboutPage" class="page-title-link">
+                            <p class="page-title">About us</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="menu" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <h1>About us</h1>
+
+            <p>Et quoniam mirari posse quosdam peregrinos existimo haec lecturos forsitan, si contigerit, quamobrem cum
+                oratio ad ea monstranda deflexerit quae Romae gererentur, nihil praeter seditiones narratur et tabernas
+                et vilitates harum similis alias, summatim causas perstringam nusquam a veritate sponte propria
+                digressurus.
+
+                Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese
+                efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus, sed splendore liberalium
+                doctrinarum minus quam nobilem decuerat institutus, quo administrante seditiones sunt concitatae graves
+                ob inopiam vini: huius avidis usibus vulgus intentum ad motus asperos excitatur et crebros.
+
+                Montius nos tumore inusitato quodam et novo ut rebellis et maiestati recalcitrantes Augustae per haec
+                quae strepit incusat iratus nimirum quod contumacem praefectum, quid rerum ordo postulat ignorare
+                dissimulantem formidine tenus iusserim custodiri. </p>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="activityPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#activityPage" class="page-title-link">
+                            <p class="page-title">Activity</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="menu" /></a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <h1>Activity</h1>
+
+            <p>
+                Dogs are very active animals. They need a lot of action and exercise. You should take your dog out at
+                least two to three times a day for a walk or a short session of exercise. You need to increase to
+                duration of these sessions by adding 5min more for each month of age in the beginning. It is important
+                that your dog is enjoying the walks and exercises to see results. Allow him a little freedom to have fun
+                and to play with other dogs. Keep looking for signs: Is he enjoying the time? Is he getting tired? Is he
+                feeling uncomfortable with a certain exercise? Do not force him to activities he obviously does not like
+                or the has not enough energy for. <br><br>
+                We are working on new features in the category &#39;Activity&#39;.<br>
+                Be excited!
+            </p>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="feedingPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#feedingPage" class="page-title-link">
+                            <p class="page-title">Feeding</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <h1>Feeding</h1>
+
+            <p>Et quoniam mirari posse quosdam peregrinos existimo haec lecturos forsitan, si contigerit, quamobrem cum
+                oratio ad ea monstranda deflexerit quae Romae gererentur, nihil praeter seditiones narratur et tabernas
+                et vilitates harum similis alias, summatim causas perstringam nusquam a veritate sponte propria
+                digressurus.
+
+                Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese
+                efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus, sed splendore liberalium
+                doctrinarum minus quam nobilem decuerat institutus, quo administrante seditiones sunt concitatae graves
+                ob inopiam vini: huius avidis usibus vulgus intentum ad motus asperos excitatur et crebros.
+
+                Montius nos tumore inusitato quodam et novo ut rebellis et maiestati recalcitrantes Augustae per haec
+                quae strepit incusat iratus nimirum quod contumacem praefectum, quid rerum ordo postulat ignorare
+                dissimulantem formidine tenus iusserim custodiri. </p>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="medReminderPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#medReminderPage" class="page-title-link">
+                            <p class="page-title">Medication reminder</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"mg src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="editDogPage">
+
+        <!----------------------------- NAVBAR 1 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-1" data-position="fixed">
+                <ul>
+                    <li><a id="logo" href="#mainPage"><img src="pictures/color_logo.png" alt="Main Page"/></a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 1 ------------------------------>
+
+        <!--get data from database and fill in textboxes -->
+
+        <div role="main" class="ui-content">
+            <h1>Modify Dog Profil</h1>
+
+            <form action="/action_page.php" class="ui-filterable">
+                First name:<br>
+                <input type="text" name="edog-firstname" value="">
+                <br>
+
+                Last name:<br>
+                <input type="text" name="edog-lastname" value="">
+                <br>
+
+                Profile picture:<br>
+                <input type="file" name="pp" accept="image/*" value="">
+                <br>
+
+                Date of birth:<br>
+                <input type="date" name="date" id="edog-dob" value="">
+                <br>
+
+                <fieldset data-role="controlgroup">
+                    <legend>Sex:</legend>
+                    <input type="radio" name="sex" id="edog-male" value="choice-1">
+                    <label for="male">Male</label>
+                    <input type="radio" name="sex" id="edog-female" value="choice-2">
+                    <label for="female">Female</label>
+                </fieldset>
+                <br>
+
+                <fieldset data-role="controlgroup">
+                    <legend>Weight:</legend>
+                    <input type="radio" name="weight" id="edog-XS" value="XS">
+                    <label for="XS">1 - 10 lbs → X-Small dog</label>
+                    <input type="radio" name="weight" id="edog-S" value="S">
+                    <label for="S">11 - 25 lbs → Small dog</label>
+                    <input type="radio" name="weight" id="edog-M" value="M">
+                    <label for="M">26 - 40 lbs → Medium dog</label>
+                    <input type="radio" name="weight" id="edog-L" value="L">
+                    <label for="L">41 - 70 lbs → Large dog</label>
+                    <input type="radio" name="weight" id="edog-XL" value="XL">
+                    <label for="XL">71 - 90 lbs → X-Large dog</label>
+                    <input type="radio" name="weight" id="edog-XXL" value="XXL">
+                    <label for="XXL">91 -110 lbs → XX-Large dog</label>
+                </fieldset><br>
+
+                Breed (add several breeds if the dog is mix-breeded, and add no one if you don't know it):<br>
+                <input id="edog-filterBasic-input" data-type="search">
+                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true"
+                    data-input="#edog-filterBasic-input">
+                    <li><input type="checkbox" name="breed" id="edog-labrador" value="labrador">
+                        <label for="labrador">Labrador</label></li>
+                    <li><input type="checkbox" name="breed" id="edog-pitt-bull" value="pitt-bull">
+                        <label for="pitt-bull">Pitbull</label></li>
+                    <li><input type="checkbox" name="breed" id="edog-teckel" value="teckel">
+                        <label for="teckel">Teckel</label></li>
+                    <li><input type="checkbox" name="breed" id="edog-malinois" value="malinois">
+                        <label for="malinois">Malinois</label></li>
+                </ul><br>
+
+                Particularities:<br>
+                <textarea cols="40" rows="20" name="textarea" id="edog-textarea"></textarea><br>
+
+
+
+                <br><br>
+                <input type="submit" value="Confirm Changes" href="#dogProfile">
+                <input type="reset" value="Cancel" href="#dogProfile">
+            </form>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="parameterPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#parameterPage" class="page-title-link">
+                            <p class="page-title">Parameters</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <h1>Parameters</h1>
+
+            <p>Et quoniam mirari posse quosdam peregrinos existimo haec lecturos forsitan, si contigerit, quamobrem cum
+                oratio ad ea monstranda deflexerit quae Romae gererentur, nihil praeter seditiones narratur et tabernas
+                et vilitates harum similis alias, summatim causas perstringam nusquam a veritate sponte propria
+                digressurus.
+
+                Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese
+                efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus, sed splendore liberalium
+                doctrinarum minus quam nobilem decuerat institutus, quo administrante seditiones sunt concitatae graves
+                ob inopiam vini: huius avidis usibus vulgus intentum ad motus asperos excitatur et crebros.
+
+                Montius nos tumore inusitato quodam et novo ut rebellis et maiestati recalcitrantes Augustae per haec
+                quae strepit incusat iratus nimirum quod contumacem praefectum, quid rerum ordo postulat ignorare
+                dissimulantem formidine tenus iusserim custodiri. </p>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="raisingPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#raisingPage" class="page-title-link">
+                            <p class="page-title">Raising</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <h1>Raising</h1>
+
+            <p>
+                Raising is one of the most important things for the dog owner and of course for the dog. It is
+                necessary, that you have enough time and patience for your dog's training. <br>
+                There are some differences in raising a puppy compared to an older dog. If you got your new friend after
+                a while when he is not a puppy anymore, a lot of the raising is probably done.
+                Your Dog should be trained already. He manages basic things like potty Training or common tricks, but
+                you must continue with the Training. Try to teach more difficult things or combinations. You can try to
+                get rid of bad habits your dog might have developed over the time or you can keep older achievements up
+                to date. <br>
+                If he is still very young you must pay attention to other things. Basic behaviour must be trained, and
+                this can be difficult. If you are making mistakes your dog will keep these bad habits. <br>
+                That’s why: be careful while rising a dog and keep paying attention to your dog’s behaviour. He will
+                show you if he is feeling comfortable with new situations. <br> <br>
+                We are working on new features in the category “Raising”. <br>
+                Be excited!
+
+            </p>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="accountPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#accountPage" class="page-title-link">
+                            <p class="page-title">Account</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+            <h1>Your Account</h1>
+            <div id="notComplete">
+                <p style="color:red">
+                    <!-- dynamically modified value with js-->
+                </p>
+            </div>
+
+            <form action="">
+                <label for="userAccName">Name</label>
+                <input class='inputAcc' disabled='disabled' type="text" name="name" id="userAccName" value="my name">
+                <label for="userAccEmail">Email</label>
+                <input class='inputAcc' disabled='disabled' type="text" name="email" id="userAccEmail"
+                    value="my@email.com">
+                <label for="userAccPassword">Password:</label>
+                <input class='inputAcc' disabled='disabled' type="password" name="password" id="userAccPassword"
+                    value="mypassword" autocomplete="off">
+                <div id="confirmation">
+                    <label for="confirmPassword">Confirm password:</label>
+                    <input class='inputAcc' type="password" name="password" id="confirmPassword" value=""
+                        autocomplete="off">
+                </div>
+            </form>
+            <div id="modifyInfos">
+                <button id="btnEdit"
+                    class="ui-btn ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-edit">Edit</button>
+                <button id='validateEdit'
+                    class="ui-btn ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-check">modify</button>
+            </div>
+
+            <p> number of dogs : 1</p>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <div data-role="page" id="vetAroundPage">
+
+        <!----------------------------- NAVBAR 2 ------------------------------>
+
+        <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                <ul>
+                    <li>
+                        <a id="dog-pp" class="dog-pp" href="#dogProfile"></a>
+                    </li>
+                    <li><a href="#vetAroundPage" class="page-title-link">
+                            <p class="page-title">Vet around you</p>
+                        </a></li>
+                    <li><a id="hamburger" href="#menu_panel" data-ajax="false"><img src="pictures/color_menu.png" alt="Menu"/></a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                <ul style="text-align: center;">
+                    <li><a href="#healthPage"><img src="pictures/health_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#activityPage"><img src="pictures/activities_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#feedingPage"><img src="pictures/feeding_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                    <li><a href="#raisingPage"><img src="pictures/raise_icon.png" alt="health"
+                                style="height:50px; margin: 5px;" /></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!----------------------------- END NAVBAR 2 ------------------------------>
+
+        <div role="main" class="ui-content">
+
+            <div class="gmap_canvas">
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=veterinary&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                </iframe>
+            </div>
+
+
+            <!--  key=AIzaSyC4xEk8RKfijgXt6V_W4SS3AhXkZosgeyg 
+                
+                   <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFC7aOJmExrqnwkGf8OSQauZgqtORqRuk&callback=initMap" async defer></script>-->
+
+
+
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
+
+    </div>
+
+    <!----------------------------- MENU RIGHT PANEL ------------------------------>
+    <div id="menu_panel" data-role="panel" data-display="overlay" data-theme="a" data-position="right"
+    data-position-fixed="true" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-closed">
+        <div class="ui-panel-inner">
+            <ul data-role="listview" class="ui-listview">
+                <li data-icon="delete"><a href="#" data-rel="close" style=" padding-top: 20%"
+                        class="ui-btn ui-btn-icon-right ui-icon-delete"></a></li>
+                <li><a href="#accountPage" class="ui-btn">Account</a></li>
+                <li><a href="#aboutPage" class="ui-btn">About us</a></li>
+                <li><a href="#helpGuide" class="ui-btn">Help Guide</a></li>
+                <li><a href="#parameterPage" class="ui-btn">Parameters</a></li>
+                <li><a href="#" id="Logout" class="ui-btn">Log off</a></li>
+            </ul>
+        </div>
+    </div>
+    <!----------------------------- END MENU RGHT PANEL ------------------------------>
+
+    <!-- ========================= Firebase Scrips  ========================== -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-firestore.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/app.js"></script>
+    <!-- ========================= Custom Script ============================= -->
+    <script src="js/script.js"></script>
+</body>
+
+
+</html>
