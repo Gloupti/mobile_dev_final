@@ -4,15 +4,7 @@ ELEMENTS WITHIN DOCUMENT THAT MATCHES SPECIFIC SELECTOR
 const healthList = document.querySelector('.healtInfo');
 const dogDetails = document.querySelector('.dogInfo');
 const dogImgAndName = document.querySelector('.dogImgName');
-var dogImg = document.querySelector('#dog-pp');
-
-/*$( document ).on( "pageinit", "#dogPage", function(e) {
-    dogImg = document.querySelector('.dog-pp');
-});
-
-$( document ).on( "pageinit", "#helpGuide", function(e) {
-    dogImg = document.querySelector('.dog-pp');
-});*/
+var dogImg = document.querySelectorAll('.dog-pp');
 
 
 /*=======================================================
@@ -288,10 +280,10 @@ const showImgDog = (user) => {
                 const dog = docData.data();
                 // Show data in front end
                 const html = `<img src='pictures/${dog.imageTitle}' alt="..." />`;
-                dogImg.innerHTML = html;
+                dogImg.forEach(item => item.innerHTML = html);
             } else {
               // clear account info
-              dogImg.innerHTML = '';
+              dogImg.forEach(item => item.innerHTML = '');
             }
           }).catch((err) => {
             // Either
@@ -374,33 +366,9 @@ function editProfile() {
 check.click(btnCheck);
 function btnCheck(){
 
-<<<<<<< HEAD
     var inputs = [username, usermail, userpwd, confirmPwd ];
     
     if ($('.inputAcc').val() == "")
-=======
-
-var inputs = [username, usermail, userpwd, confirmPwd ];
-
-if ($('.inputAcc').val() == "")
-{
-    
-    
-   
-    for (var i = 0;i<=3;i++)
-    {
-        if (inputs[i].val() == "")
-        {
-            inputs[i].css("border","1px solid red");
-            $('#notComplete p').text('your input is not complete');
-            
-        }
-    }
-}
-else
-{
-    if (userpwd.val() == confirmPwd.val())
->>>>>>> 1d894f387bbbf5f31c783323324573dcd173dfae
     {
         for (var i = 0;i<=3;i++)
         {
@@ -411,7 +379,6 @@ else
             }
         }
     }
-<<<<<<< HEAD
     else
     {
         if (userpwd.val() == confirmPwd.val())
@@ -424,10 +391,5 @@ else
             $('#notComplete p').text('the confirmed password is different');
         }
     }
-=======
-}
-
-
->>>>>>> 1d894f387bbbf5f31c783323324573dcd173dfae
 
 }
