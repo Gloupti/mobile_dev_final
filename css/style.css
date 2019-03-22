@@ -5,9 +5,6 @@ body, div {
 }
 
 p {
-    text-align: center; 
-    margin-bottom: 40%;
-    margin-top: 10%;
     color: #7F7F7F;
 }
 
@@ -81,6 +78,11 @@ img{
     font-size: 15px;
 }
 
+p.start {
+    text-align: center; 
+    margin-bottom: 40%;
+    margin-top: 10%;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {} 
@@ -337,6 +339,70 @@ a {
     height: 50px
 }
     
+/* --------------- medication-reminder.html --------------- */
+#add-reminder {
+    width: 30%;
+    float: right;
+    margin-right: 20%;
+    margin-top: 10%
+
+}
+
+
+.block-perso-a {
+    width: 75% !important;
+}
+
+.block-perso-b {
+    width: 25% !important;
+}
+
+
+.ui-btn.my-tooltip-btn,
+.ui-btn.my-tooltip-btn:hover,
+.ui-btn.my-tooltip-btn:active {
+    background-color: #f9f9f9 !important;
+    border: 0;
+}
+
+.reminder-item {
+    margin-top: 5%;
+    background-color: #81bc4a !important; 
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 700px;
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(127,127,127,1);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(127,127,127,1);
+    box-shadow: 5px 5px 10px 0px rgba(127,127,127,1);
+}
+
+.reminder-item p {
+    color: #f9f9f9 !important; 
+    text-shadow: none;
+}
+
+@media only screen and (min-width: 768px) {
+    
+    #add-reminder {
+        width: 30%;
+    }
+    
+    .grid-perso-a {
+        min-height: 100px;
+        line-height: 100px;
+        white-space: nowrap;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+     #add-reminder {
+        width: 20%;
+        margin-top: 5%
+    }
+}
+    
+
 /* --------------- vet-around.html --------------- */
 .gmap_canvas {
     overflow:hidden;
