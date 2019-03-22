@@ -1,0 +1,127 @@
+<!DOCTYPE html> 
+<html  lang="en">
+    <head>
+        <title>Activity</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.5.min.css" />
+	
+    <link rel="stylesheet" href="./css/style.css" />
+  
+        
+    </head>
+    
+    <body>
+        <div data-role="page">
+          
+            
+            <!-------------------------- MENU TOP RIGHT ------------------------------>
+            
+            <div data-role="panel" id="topright-menu" data-display="overlay" data-position="right" data-position-fixed="true" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-body-inherit ui-panel-animate ui-panel-open">
+                
+                <div class="ui-panel-inner">
+                    <ul data-role="listview" data-icon="false" class="ui-listview">
+                        <li data-icon="delete"><a href="#" data-rel="close" style=" padding-top: 20%" class="ui-btn ui-btn-icon-right ui-icon-delete"></a></li>
+                        <li><a href="user_account.html" class="ui-btn">Account</a></li>
+                        <li><a href="about_us.html" class="ui-btn">About us</a></li>
+                        <li><a href="help_guide.html" class="ui-btn">Help Guide</a></li>
+                        <li><a href="parameters.html" class="ui-btn">Parameters</a></li>
+                        <li><a href="#" class="ui-btn">Log off</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!----------------------------- END MENU TOP RIGHT ------------------------------>
+            
+            
+            
+         <!----------------------------- NAVBAR 2 ------------------------------>
+
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+                    <ul>
+                        <li><a id="dog-pp" href="dog_profile.html"><img src="pictures/dog-test.jpg" alt="profil picture dog"/></a></li>
+                         <li><a href="" class="page-title-link" ><p class="page-title">Medication reminder</p></a></li>
+                        <li><a id="hamburger" href="#topright-menu"><img src="pictures/color_menu.png" alt="menu"/></a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+                    <ul style="text-align: center;">
+                        <li><a href="./health.html"><img src="pictures/health_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+                        <li><a href="./activity.html"><img src="pictures/activities_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+                        <li><a href="./feeding.html"><img src="pictures/feeding_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+                        <li><a href="./raising.html"><img src="pictures/raise_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!----------------------------- END NAVBAR 2 ------------------------------>
+
+            
+            
+            <div role="main" class="ui-content">
+               
+                <!------ Title and button + ------->
+                <div class="ui-grid-a grid-perso-a">
+                    <div class="ui-block-a block-perso-a">
+                        <h1>Reminder list</h1>
+                    </div>
+                    <div class="ui-block-b block-perso-b">
+                        <p> <a href="#popupLogin" data-rel="popup" data-position-to="window"  data-transition="pop"><img id="add-reminder" src="pictures/plus.png"/></a> </p>
+                    </div>
+                </div>
+                
+                <!------ Pop up ------->
+                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                    <form>
+                        <div style="padding:10px 20px;">
+                            <h3>Add a reminder</h3>
+                            <label for="un" class="ui-hidden-accessible">Name:</label>
+                            <input type="text" name="name" id="name" value="" placeholder="name" data-theme="a">
+                            <label for="date" class="ui-hidden-accessible">Date:</label>
+                            <input type="date" name="date" id="date" value="" placeholder="date" data-theme="a">
+                            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Add</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!------ Reminders listed ------->
+                <div>
+                    <div class="reminder-item">
+                        <p>Name: value</p>
+                        <p>Date: value</p>
+                    </div>
+                    
+                    <div class="reminder-item">
+                        <p>Name: value</p>
+                        <p>Date: value</p>
+                    </div>
+                </div>
+                
+                
+                
+            </div><!-- /content -->
+            
+            
+            
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar" data-iconpos="bottom">
+                    <ul>
+                        <li><a href="main_page.html" data-icon="arrow-l" data-rel="back"></a></li>
+                        <li><a href="main_page.html" data-icon="home"></a></li>
+                        <li><a href="help_guide.html" data-icon="info"></a></li>
+                    </ul>
+                </div>
+            </div><!-- /footer -->
+            
+            
+            
+            
+        </div>
+        
+        <script src="js/jquery-1.11.1.min.js"></script>
+	<script src="jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/script.js"></script>
+        
+    </body>
+</html>
