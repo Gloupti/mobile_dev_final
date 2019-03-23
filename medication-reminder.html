@@ -75,12 +75,60 @@
                 <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
                     <form>
                         <div style="padding:10px 20px;">
-                            <h3>Add a reminder</h3>
+                            <h3>Add a reminder</h3><br>
+                            <button type="button" id="medi_button" onclick="med()" style="background-color: #81bc4a; color: #f6f6f6">Medication</button>
+                            <button type="button" id="vet_button" onclick="vetappoint()">Vet Appointment</button>
+                           
+                            <div id="medi_div" style="display: block">
                             <label for="un" class="ui-hidden-accessible">Name:</label>
-                            <input type="text" name="name" id="name" value="" placeholder="name" data-theme="a">
+                            <input type="text" name="medi" id="name" value="" placeholder="name" data-theme="a">
+                            <label class="ui-corner-all">
+                            <input type="radio" checked="checked" name="medi" id="rad_med" data-theme="a"> daily
+                            <span class="ui-corner-all"></span></label>
+                            <label class="ui-corner-all">
+                            <input type="radio" name="medi" id="rad_med" data-theme="a"> weekly
+                            <span class="ui-corner-all"></span>
+                            </label>
+                            <label for="un" class="ui-hidden-accessible">Notes:</label>
+                            <input type="text" name="medi" id="notes" value="" placeholder="further notes" data-theme="a">
+                            </div>
+                            <div id="vet_div" style="display: none">
+                            <label for="un" class="ui-hidden-accessible">Appointment:</label> 
+                            <input type="text" name="vet" id="name" value="" placeholder="type of appointment" data-theme="a">
+                            <label for="un" class="ui-hidden-accessible">Appointment:</label> 
+                            <input type="text" name="vet" id="location" value="" placeholder="location/adress" data-theme="a">
                             <label for="date" class="ui-hidden-accessible">Date:</label>
-                            <input type="date" name="date" id="date" value="" placeholder="date" data-theme="a">
+                            <input type="date" name="vet" id="date" value="" placeholder="date" data-theme="a">
+                            <label for="time" class="ui-hidden-accessible">Time:</label>
+                            <input type="time" name="vet" id="time" value="" placeholder="time">
+                            <label for="un" class="ui-hidden-accessible">Notes:</label>
+                            <input type="text" name="vet" id="vet_notes" value="" placeholder="further notes" data-theme="a">
+                            </div>                                                  
                             <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Add</button>
+                            
+                            <script>
+                        function med() 
+                                {   
+                                    document.getElementById('medi_div').style.display='block';
+                                    document.getElementById('vet_div').style.display='none';
+                                    document.getElementById('medi_button').style.backgroundColor='#81bc4a';
+                                    document.getElementById('medi_button').style.color='#f6f6f6';
+                                    document.getElementById('vet_button').style.backgroundColor='#f6f6f6';
+                                    document.getElementById('vet_button').style.color='#393939';
+                                }
+                        function vetappoint() 
+                                {                
+                                    document.getElementById('medi_div').style.display='none';
+                                    document.getElementById('vet_div').style.display='block';
+                                    document.getElementById('vet_button').style.backgroundColor='#81bc4a';
+                                    document.getElementById('vet_button').style.color='#f6f6f6';
+                                    document.getElementById('medi_button').style.backgroundColor='#f6f6f6';
+                                    document.getElementById('medi_button').style.color='#393939';
+                                    
+                                }
+               
+                            </script>
+                            
                         </div>
                     </form>
                 </div>
