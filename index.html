@@ -363,73 +363,11 @@ DOG PROFILE PAGE
 
         <div role="main" class="ui-content">
             <h1>Dog profile</h1>
-
+            <br/>
             <div class="dogInfo"></div>
-
-            <!--<form class="ui-filterable">
-                Profile picture:
-                <br><br>
-
-                First name:<br>
-                <input type="text" name="firstname" value="">
-                <br>
-
-                Last name:<br>
-                <input type="text" name="lastname" value="">
-                <br>
-
-                Date of birth:<br>
-                <input type="date" name="date" id="date" value="">
-                <br>
-
-                <fieldset data-role="controlgroup">
-                    <legend>Sex:</legend>
-                    <input type="radio" name="sex" id="male" value="choice-1">
-                    <label for="male">Male</label>
-                    <input type="radio" name="sex" id="female" value="choice-2">
-                    <label for="female">Female</label>
-                </fieldset>
-                <br>
-
-                <fieldset data-role="controlgroup">
-                    <legend>Weight:</legend>
-                    <input type="radio" name="weight" id="XS" value="XS">
-                    <label for="XS">1 - 10 lbs → X-Small dog</label>
-                    <input type="radio" name="weight" id="S" value="S">
-                    <label for="S">11 - 25 lbs → Small dog</label>
-                    <input type="radio" name="weight" id="M" value="M">
-                    <label for="M">26 - 40 lbs → Medium dog</label>
-                    <input type="radio" name="weight" id="L" value="L">
-                    <label for="L">41 - 70 lbs → Large dog</label>
-                    <input type="radio" name="weight" id="XL" value="XL">
-                    <label for="XL">71 - 90 lbs → X-Large dog</label>
-                    <input type="radio" name="weight" id="XXL" value="XXL">
-                    <label for="XXL">91 -110 lbs → XX-Large dog</label>
-                </fieldset><br>
-
-                Breed (add several breeds if the dog is mix-breeded, and add no one if you don't know it):<br>
-                <input id="filterBasic-input" data-type="search">
-                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true"
-                    data-input="#filterBasic-input">
-                    <li><input type="checkbox" name="breed" id="labrador" value="labrador">
-                        <label for="labrador">Labrador</label></li>
-                    <li><input type="checkbox" name="breed" id="pitt-bull" value="pitt-bull">
-                        <label for="pitt-bull">Pitbull</label></li>
-                    <li><input type="checkbox" name="breed" id="teckel" value="teckel">
-                        <label for="teckel">Teckel</label></li>
-                    <li><input type="checkbox" name="breed" id="malinois" value="malinois">
-                        <label for="malinois">Malinois</label></li>
-                </ul><br>
-
-                Particularities:<br>
-                <textarea cols="40" rows="20" name="textarea" id="textarea"></textarea><br>
-
-
-
-                <br><br>
-                <input type="submit" value="Modify" href="#editDogPage">
-                <input type="reset" value="See Menu" href="#dogPage">
-            </form>-->
+            
+              <br><br>
+            <a value="Modify" href="#editDogPage" class="ui-btn ui-shadow">Modify</a>
 
         </div><!-- /content -->
 
@@ -853,7 +791,7 @@ MEDICATION REMINDER PAGE
 
 
 <!--=======================================================
-EDIT DOG PROFILE PAGE ????????????????
+EDIT DOG PROFILE PAGE
 ========================================================= -->
     
     <div data-role="page" id="editDogPage">
@@ -876,71 +814,74 @@ EDIT DOG PROFILE PAGE ????????????????
         <div role="main" class="ui-content">
             <h1>Modify Dog Profil</h1>
 
-            <form action="/action_page.php" class="ui-filterable">
+            <form id="modify-form" class="ui-filterable">
                 First name:<br>
-                <input type="text" name="edog-firstname" value="">
+                <input type="text" id="dogFirstname" name="dogFirstname" value="">
                 <br>
 
                 Last name:<br>
-                <input type="text" name="edog-lastname" value="">
+                <input type="text" id="dogLastname" name="dogLastname" value="">
                 <br>
 
                 Profile picture:<br>
-                <input type="file" name="pp" accept="image/*" value="">
+                <input type="file" class="file-select" id="dogImageTitle" name="dogImageTitle" accept="image/*">
                 <br>
 
                 Date of birth:<br>
-                <input type="date" name="date" id="edog-dob" value="">
+                <input type="date" data-role="date" name="dogDob" id="dogDob">
                 <br>
 
                 <fieldset data-role="controlgroup">
                     <legend>Sex:</legend>
-                    <input type="radio" name="sex" id="edog-male" value="choice-1">
-                    <label for="male">Male</label>
-                    <input type="radio" name="sex" id="edog-female" value="choice-2">
-                    <label for="female">Female</label>
+                    <select id="dogGender" name="dogGender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
                 </fieldset>
                 <br>
 
                 <fieldset data-role="controlgroup">
                     <legend>Weight:</legend>
-                    <input type="radio" name="weight" id="edog-XS" value="XS">
-                    <label for="XS">1 - 10 lbs → X-Small dog</label>
-                    <input type="radio" name="weight" id="edog-S" value="S">
-                    <label for="S">11 - 25 lbs → Small dog</label>
-                    <input type="radio" name="weight" id="edog-M" value="M">
-                    <label for="M">26 - 40 lbs → Medium dog</label>
-                    <input type="radio" name="weight" id="edog-L" value="L">
-                    <label for="L">41 - 70 lbs → Large dog</label>
-                    <input type="radio" name="weight" id="edog-XL" value="XL">
-                    <label for="XL">71 - 90 lbs → X-Large dog</label>
-                    <input type="radio" name="weight" id="edog-XXL" value="XXL">
-                    <label for="XXL">91 -110 lbs → XX-Large dog</label>
+                    <select id="dogWeight" name="dogWeight">
+                        <option value="XS">1 - 10 lbs → X-Small dog</option>
+                        <option value="S">11 - 25 lbs → Small dog</option>
+                        <option value="M">26 - 40 lbs → Medium dog</option>
+                        <option value="L">41 - 70 lbs → Large dog</option>
+                        <option value="XL">71 - 90 lbs → X-Large dog</option>
+                        <option value="XXL">91 -110 lbs → XX-Large dog</option>
+                    </select>
                 </fieldset><br>
 
                 Breed (add several breeds if the dog is mix-breeded, and add no one if you don't know it):<br>
-                <input id="edog-filterBasic-input" data-type="search">
-                <ul data-role="listview" data-inset="true" data-filter="true" data-filter-reveal="true"
-                    data-input="#edog-filterBasic-input">
-                    <li><input type="checkbox" name="breed" id="edog-labrador" value="labrador">
-                        <label for="labrador">Labrador</label></li>
-                    <li><input type="checkbox" name="breed" id="edog-pitt-bull" value="pitt-bull">
-                        <label for="pitt-bull">Pitbull</label></li>
-                    <li><input type="checkbox" name="breed" id="edog-teckel" value="teckel">
-                        <label for="teckel">Teckel</label></li>
-                    <li><input type="checkbox" name="breed" id="edog-malinois" value="malinois">
-                        <label for="malinois">Malinois</label></li>
-                </ul><br>
+                <select id="dogBreed" name="dogBreed">
+                    <option value="labrador">Labrador</option>
+                    <option value="pit-bull">Pitbull</option>
+                    <option value="teckel">Teckel</option>
+                    <option value="malinois">Malinois</option>
+                    <option value="poodle">Poodle</option>
+                </select>
+                <br>
 
                 Particularities:<br>
-                <textarea cols="40" rows="20" name="textarea" id="edog-textarea"></textarea><br>
-
-
+                <textarea cols="40" rows="20" name="textarea" id="particularity" name="particularity">
+                </textarea><br>
 
                 <br><br>
-                <input type="submit" value="Confirm Changes" href="#dogProfile">
-                <input type="reset" value="Cancel" href="#dogProfile">
+                <button type="submit">Modify</button>
+                <input type="reset" value="Cancel" href="#dogPage">
             </form>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back"></a></li>
+                    <li><a href="#mainPage" data-icon="home"></a></li>
+                    <li><a href="#helpGuide" data-icon="info"></a></li>
+                </ul>
+            </div>
+        </div><!-- /footer -->
 
         </div><!-- /content -->
 

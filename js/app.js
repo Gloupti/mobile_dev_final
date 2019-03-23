@@ -54,6 +54,36 @@ $(document).ready(() => {
     });
 
   })
+    
+     // update dog
+  const modifyForm = document.querySelector('#modify-form');
+  modifyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const imgTitle = modifyForm.dogImageTitle.value
+    const array = imgTitle.split('\\');
+    const imageTitle = array.slice(-1)[0];
+    
+    db.collection('dogs').doc(this.user).set({
+      firstname: modifyForm.dogFirstname.value,
+      lastname: modifyForm.dogLastname.value,
+      imageTitle: imageTitle,
+      dob: modifyForm.dogDob.value,
+      gender: modifyForm.dogGender.value,
+      breed: modifyForm.dogBreed.value,
+      weight: modifyForm.dogWeight.value,
+      particularity: modifyForm.particularity.value
+    }).then(() => {
+      // reset form
+      console.log('Data saved!')
+      modifyForm.reset();
+      //window.location.replace('#dogProfile');
+      window.location.href = "#dogProfile";
+    }).catch(err => {
+      console.log(err.message);
+    });
+
+  })
 
   // signup
   const signupForm = document.querySelector('#signup-form');

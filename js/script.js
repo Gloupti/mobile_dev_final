@@ -44,180 +44,35 @@ const showNewDog = (user) => {
                 var sex = '';
                 var dogWeight = '';
                 var dogBreed = '';
-                // Dog Gender Select
-                if (dog.gender == 'male'){
-                    sex = `<select id="dogGender" name="dogGender">
-                                    <option selected value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>`;
-                } else {
-                    sex =  `<select id="dogGender" name="dogGender">
-                                    <option value="male">Male</option>
-                                    <option selected value="female">Female</option>
-                                </select>`;
-                }
-                // Dog Weight Select
-                if (dog.weight == 'XS') {
-                    dogWeight = `<select id="dogWeight" name="dogWeight">
-                                    <option selected value="XS">1 - 10 lbs → X-Small dog</option>
-                                    <option value="S">11 - 25 lbs → Small dog</option>
-                                    <option value="M">26 - 40 lbs → Medium dog</option>
-                                    <option value="L">41 - 70 lbs → Large dog</option>
-                                    <option value="XL">71 - 90 lbs → X-Large dog</option>
-                                    <option value="XXL">91 -110 lbs → XX-Large dog</option>
-                                </select>`
-                } else if (dog.weight == 'S') {
-                    dogWeight = `<select id="dogWeight" name="dogWeight">
-                                    <option value="XS">1 - 10 lbs → X-Small dog</option>
-                                    <option selected value="S">11 - 25 lbs → Small dog</option>
-                                    <option value="M">26 - 40 lbs → Medium dog</option>
-                                    <option value="L">41 - 70 lbs → Large dog</option>
-                                    <option value="XL">71 - 90 lbs → X-Large dog</option>
-                                    <option value="XXL">91 -110 lbs → XX-Large dog</option>
-                                </select>`
-                } else if ( dog.weight == 'M') {
-                    dogWeight = `<select id="dogWeight" name="dogWeight">
-                                    <option value="XS">1 - 10 lbs → X-Small dog</option>
-                                    <option value="S">11 - 25 lbs → Small dog</option>
-                                    <option selected value="M">26 - 40 lbs → Medium dog</option>
-                                    <option value="L">41 - 70 lbs → Large dog</option>
-                                    <option value="XL">71 - 90 lbs → X-Large dog</option>
-                                    <option value="XXL">91 -110 lbs → XX-Large dog</option>
-                                </select>`
-                } else if (dog.weight == 'L') {
-                    dogWeight = `<select id="dogWeight" name="dogWeight">
-                                    <option value="XS">1 - 10 lbs → X-Small dog</option>
-                                    <option value="S">11 - 25 lbs → Small dog</option>
-                                    <option value="M">26 - 40 lbs → Medium dog</option>
-                                    <option selected value="L">41 - 70 lbs → Large dog</option>
-                                    <option value="XL">71 - 90 lbs → X-Large dog</option>
-                                    <option value="XXL">91 -110 lbs → XX-Large dog</option>
-                                </select>`
-                } else if (dog.weight == 'XL') {
-                    dogWeight = `<select id="dogWeight" name="dogWeight">
-                                    <option value="XS">1 - 10 lbs → X-Small dog</option>
-                                    <option value="S">11 - 25 lbs → Small dog</option>
-                                    <option value="M">26 - 40 lbs → Medium dog</option>
-                                    <option value="L">41 - 70 lbs → Large dog</option>
-                                    <option selected value="XL">71 - 90 lbs → X-Large dog</option>
-                                    <option value="XXL">91 -110 lbs → XX-Large dog</option>
-                                </select>`
-                } else {
-                    dogWeight = `<select id="dogWeight" name="dogWeight">
-                                    <option value="XS">1 - 10 lbs → X-Small dog</option>
-                                    <option value="S">11 - 25 lbs → Small dog</option>
-                                    <option value="M">26 - 40 lbs → Medium dog</option>
-                                    <option value="L">41 - 70 lbs → Large dog</option>
-                                    <option value="XL">71 - 90 lbs → X-Large dog</option>
-                                    <option selected value="XXL">91 -110 lbs → XX-Large dog</option>
-                                </select>`
-                }
-                // Dog Breed select
-                if (dog.breed == 'labrador'){
-                    dogBreed = `<select id="dogBreed" name="dogBreed">
-                                    <option value="labrador">Labrador</option>
-                                    <option value="pit-bull">Pitbull</option>
-                                    <option value="teckel">Teckel</option>
-                                    <option value="malinois">Malinois</option>
-                                    <option value="poodle">Poodle</option>
-                                </select>`
-                } else if (dog.breed == 'pit-bull') {
-                    dogBreed = `<select id="dogBreed" name="dogBreed">
-                                    <option value="labrador">Labrador</option>
-                                    <option value="pit-bull">Pitbull</option>
-                                    <option value="teckel">Teckel</option>
-                                    <option value="malinois">Malinois</option>
-                                    <option value="poodle">Poodle</option>
-                                </select>`
-                } else if (dog.breed == 'teckel') {
-                    dogBreed = `<select id="dogBreed" name="dogBreed">
-                                    <option value="labrador">Labrador</option>
-                                    <option value="pit-bull">Pitbull</option>
-                                    <option value="teckel">Teckel</option>
-                                    <option value="malinois">Malinois</option>
-                                    <option value="poodle">Poodle</option>
-                                </select>`
-                } else if (dog.breed == 'malinois') {
-                    dogBreed = `<select id="dogBreed" name="dogBreed">
-                                    <option value="labrador">Labrador</option>
-                                    <option value="pit-bull">Pitbull</option>
-                                    <option value="teckel">Teckel</option>
-                                    <option value="malinois">Malinois</option>
-                                    <option value="poodle">Poodle</option>
-                                </select>`
-                } else {
-                    dogBreed = `<select id="dogBreed" name="dogBreed">
-                                    <option value="labrador">Labrador</option>
-                                    <option value="pit-bull">Pitbull</option>
-                                    <option value="teckel">Teckel</option>
-                                    <option value="malinois">Malinois</option>
-                                    <option value="poodle">Poodle</option>
-                                </select>`
-                }
-                // Show data in front end
+                
                 const html = `
                 <div class="dog-profile">
-                    <div class="ui-field-contain">
-                        <img src='pictures/${dog.imageTitle}' alt='...'/>
-                    </div>
-                    <div class="ui-field-contain">
-                        <label>First Name:</label>
-                        <input type="text" name="firstname" value="${dog.firstname}" class="ui-state-disabled">
-                    </div>
-                    <div class="ui-field-contain">
-                        <label>Last name:</label>
-                        <input type="text" name="lastname" value="${dog.lastname}" class="ui-state-disabled">
-                    </div>
-                    <div class="ui-field-contain">
-                        <label>Date of birth:</label>
-                        <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
-                            <input type="date" data-role="date" name="dogDob" id="dogDob" value="${dog.dob}">
-                        </div>
-                    </div>
-                    <div class="ui-field-contain">
-                        <fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
-                            <div role="heading" class="ui-controlgroup-label">
-                                <legend>Sex:</legend>
-                            </div>
-                            <div class="ui-controlgroup-controls ">  
-                                <div class="ui-select">
-                                    <div id="dogGender-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow ui-first-child ui-last-child">
-                                    <span>${dog.gender}</span>
-                                    ${sex}
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="ui-field-contain">
-                        <fieldset data-role="controlgroup" class="ui-controlgroup ui-controlgroup-vertical ui-corner-all">
-                            <div role="heading" class="ui-controlgroup-label">
-                                <legend>Weight:</legend>
-                            </div>
-                            <div class="ui-controlgroup-controls ">        
-                                <div class="ui-select">
-                                    <div id="dogWeight-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow ui-first-child ui-last-child">
-                                        <span>11 - 25 lbs → Small dog</span>
-                                        ${dogWeight}
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                        <div class="ui-field-contain">
-                        <label>Breed</label>
-                        <div class="ui-select">
-                            <div id="dogBreed-button" class="ui-btn ui-icon-carat-d ui-btn-icon-right ui-corner-all ui-shadow">
-                                <span>${dog.breed}</span>
-                                ${dogBreed}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui-field-contain">
-                        <label>Particularities:</label>
-                        <textarea cols="30" rows="3" name="textarea" id="textarea" class="ui-state-disabled">${dog.particularity}</textarea>
-                    </div>
-                </div>
+
+        <div style="text-align: center">
+            <img src='pictures/${dog.imageTitle}' alt='...'/>
+        </div>
+    
+        <div>
+            <h3>First Name:<strong style="color: #81bc4a"> ${dog.firstname}</strong></h3>
+        </div>
+        <div>
+            <h3>Last Name:<strong style="color: #81bc4a"> ${dog.lastname}</strong></h3>
+        </div>
+        <div>
+            <h3>Date of Birth:<strong style="color: #81bc4a"> ${dog.dob}</strong></h3>
+        </div>
+        <div>
+            <h3>Sex:<strong style="color: #81bc4a"> ${dog.gender}</strong></h3>
+        </div>
+        <div>
+            <h3>Weight:<strong style="color: #81bc4a"> ${dog.weight}</strong></h3>
+        </div>
+        <div>
+            <h3>Breed:<strong style="color: #81bc4a"> ${dog.breed}</strong></h3>
+        </div>
+        <div>
+            <h3>Particularities:<strong style="color: #81bc4a"> ${dog.particularity}</strong></h3>
+</div>
                 `;
                 dogDetails.innerHTML = html;
             } else {
@@ -238,7 +93,7 @@ const showNewDog = (user) => {
 };
 
 /*=======================================================
-DOG'S PROFILE
+DOG'S PROFILE MAIN PAGE
 ========================================================= */
 const showImgDogAndName = (user) => {
     if (user) {
