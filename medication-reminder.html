@@ -1,175 +1,183 @@
 <!DOCTYPE html> 
 <html  lang="en">
-    <head>
-        <title>Activity</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.5.min.css" />
-	
-    <link rel="stylesheet" href="./css/style.css" />
-  
-        
-    </head>
+   <head>
+      <title>Medication Reminder</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="jquery-mobile/jquery.mobile-1.4.5.min.css" />
+      <link rel="stylesheet" href="./css/style.css" />
+   </head>
     
-    <body>
-        <div data-role="page">
+   <body>
+      <div data-role="page">
           
-            
-            <!-------------------------- MENU TOP RIGHT ------------------------------>
-            
-            <div data-role="panel" id="topright-menu" data-display="overlay" data-position="right" data-position-fixed="true" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-body-inherit ui-panel-animate ui-panel-open">
-                
-                <div class="ui-panel-inner">
-                    <ul data-role="listview" data-icon="false" class="ui-listview">
-                        <li data-icon="delete"><a href="#" data-rel="close" style=" padding-top: 20%" class="ui-btn ui-btn-icon-right ui-icon-delete"></a></li>
-                        <li><a href="user_account.html" class="ui-btn">Account</a></li>
-                        <li><a href="about_us.html" class="ui-btn">About us</a></li>
-                        <li><a href="help_guide.html" class="ui-btn">Help Guide</a></li>
-                        <li><a href="parameters.html" class="ui-btn">Parameters</a></li>
-                        <li><a href="#" class="ui-btn">Log off</a></li>
-                    </ul>
-                </div>
+         <!-------------------------- MENU TOP RIGHT ------------------------------>
+         <div data-role="panel" id="topright-menu" data-display="overlay" data-position="right" data-position-fixed="true" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-body-inherit ui-panel-animate ui-panel-open">
+            <div class="ui-panel-inner">
+               <ul data-role="listview" data-icon="false" class="ui-listview">
+                  <li data-icon="delete"><a href="#" data-rel="close" style=" padding-top: 20%" class="ui-btn ui-btn-icon-right ui-icon-delete"></a></li>
+                  <li><a href="user_account.html" class="ui-btn">Account</a></li>
+                  <li><a href="about_us.html" class="ui-btn">About us</a></li>
+                  <li><a href="help_guide.html" class="ui-btn">Help Guide</a></li>
+                  <li><a href="parameters.html" class="ui-btn">Parameters</a></li>
+                  <li><a href="#" class="ui-btn">Log off</a></li>
+               </ul>
             </div>
-            
-            <!----------------------------- END MENU TOP RIGHT ------------------------------>
-            
-            
-            
+         </div>
+         <!----------------------------- END MENU TOP RIGHT ------------------------------>
+          
+          
          <!----------------------------- NAVBAR 2 ------------------------------>
-
-            <div data-role="header" data-position="fixed">
-                <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
-                    <ul>
-                        <li><a id="dog-pp" href="dog_profile.html"><img src="pictures/dog-test.jpg" alt="profil picture dog"/></a></li>
-                         <li><a href="" class="page-title-link" ><p class="page-title">Medication reminder</p></a></li>
-                        <li><a id="hamburger" href="#topright-menu"><img src="pictures/color_menu.png" alt="menu"/></a></li>
-                    </ul>
-                </div>
-                <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
-                    <ul style="text-align: center;">
-                        <li><a href="./health.html"><img src="pictures/health_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
-                        <li><a href="./activity.html"><img src="pictures/activities_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
-                        <li><a href="./feeding.html"><img src="pictures/feeding_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
-                        <li><a href="./raising.html"><img src="pictures/raise_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
-                    </ul>
+         <div data-role="header" data-position="fixed">
+            <div data-role="navbar" class="navbar navbar-2" data-position="fixed">
+               <ul>
+                  <li><a id="dog-pp" href="dog_profile.html"><img src="pictures/dog-test.jpg" alt="profil picture dog"/></a></li>
+                  <li>
+                     <a href="" class="page-title-link" >
+                        <p class="page-title">Medication reminder</p>
+                     </a>
+                  </li>
+                  <li><a id="hamburger" href="#topright-menu"><img src="pictures/color_menu.png" alt="menu"/></a></li>
+               </ul>
+            </div>
+            <div data-role="navbar" data-iconpos="bottom" data-position="fixed">
+               <ul style="text-align: center;">
+                  <li><a href="./health.html"><img src="pictures/health_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+                  <li><a href="./activity.html"><img src="pictures/activities_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+                  <li><a href="./feeding.html"><img src="pictures/feeding_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+                  <li><a href="./raising.html"><img src="pictures/raise_icon.png" alt="health" style="height:50px; margin: 5px;"/></a></li>
+               </ul>
+            </div>
+         </div>
+         <!----------------------------- END NAVBAR 2 ------------------------------>
+          
+          
+         <div role="main" class="ui-content">
+             
+            <!------ Title and button + ------->
+            <div class="ui-grid-a grid-perso-a">
+               <div class="ui-block-a block-perso-a">
+                  <h1>Reminder list</h1>
+               </div>
+               <div class="ui-block-b block-perso-b">
+                  <p> <a href="#popup-reminder" data-rel="popup" data-position-to="window"  data-transition="pop"><img id="add-reminder" src="pictures/plus.png"/></a> </p>
+               </div>
+            </div>
+             
+            <!------ Add reminder popup ------->
+            <div data-role="popup" id="popup-reminder" data-theme="a" class="ui-corner-all">
+               <h3>Add a reminder</h3>
+                
+                
+               <form id="medi_div" style="display: block;">
+                  <div class="popuperso">
+                     <button type="button" id="medi_button" onclick="med()" style="background-color: #81bc4a; color: #f6f6f6">Medication</button>
+                     <button type="button" id="vet_button" onclick="vetappoint()">Vet Appointment</button>
+                     <label for="un" class="ui-hidden-accessible">Name:</label>
+                     <input type="text" name="medi" id="name" value="" placeholder="name" data-theme="a">
+                     <label class="ui-corner-all">
+                     <input type="radio" checked="checked" name="medi" id="rad_med" data-theme="a"> daily
+                     <span class="ui-corner-all"></span></label>
+                     <label class="ui-corner-all">
+                     <input type="radio" name="medi" id="rad_med" data-theme="a"> weekly
+                     <span class="ui-corner-all"></span></label>
+                     <label for="un" class="ui-hidden-accessible">Notes:</label>
+                     <textarea row="2" name="medi" id="notes" value="" placeholder="further notes" data-theme="a"></textarea>
+                     <button type="submit" class="ui-btn ui-corner-all ui-shadow ">Add</button>
+                  </div>
+               </form>
+                
+                
+               <form id="vet_div" style="display: none;">
+                  <div class="popuperso">
+                     <button type="button" id="medi_button" onclick="med()" >Medication</button>
+                     <button type="button" id="vet_button" onclick="vetappoint()" style="background-color: #81bc4a; color: #f6f6f6">Vet Appointment</button>
+                     <label for="un" class="ui-hidden-accessible">Appointment name:</label> 
+                     <input type="text" name="vet" id="name" value="" placeholder="type of appointment" data-theme="a">
+                     <label for="un" class="ui-hidden-accessible">Appointment location:</label> 
+                     <input type="text" name="vet" id="location" value="" placeholder="location/adress" data-theme="a">
+                     <label for="date" class="ui-hidden-accessible">Date:</label>
+                     <input type="date" name="vet" id="date" value="" placeholder="date" data-theme="a">
+                     <label for="time" class="ui-hidden-accessible">Time:</label>
+                     <input type="time" name="vet" id="time" value="" placeholder="time">
+                     <label for="un" class="ui-hidden-accessible">Notes:</label>
+                     <textarea row="2" name="vet" id="vet_notes" value="" placeholder="further notes" data-theme="a"></textarea>
+                     <button type="submit" class="ui-btn ui-corner-all ui-shadow ">Add</button>
+                  </div>
+               </form>
+                
+            </div>
+             
+            <!------ Reminders listed ------->
+            <div>
+               <div class="reminder-item">
+                    <a href="#popup-delete" data-rel="popup" data-position-to="window" data-transition="pop" class="delete-btn ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext"></a>
+                   
+                  <p>Type: Medication</p>
+                  <p>Name: Deworming treatment</p>
+                  <p>Frequency: Daily</p>
+                  <p>Notes: After meal</p>
+                                      
+               </div>
+                
+               <div class="reminder-item">
+                   <a href="#popup-delete" data-rel="popup" data-position-to="window" data-transition="pop" class="delete-btn ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext"></a>
+                  <p>Type: Vet Appointement</p>
+                  <p>Name: Vaccination</p>
+                  <p>Date: Monday 29th April</p>
+                  <p>Time: 15.30</p>              
+                  <p>Notes: </p>
+               </div>
+            </div>
+             
+            <!------ Delete popup ------->
+             <div data-role="popup" id="popup-delete" data-dismissible="false">
+                <div role="main" class="ui-content">
+                    <h2>Delete Reminder?</h2>
+                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back" data-transition="flow">Delete</a>
+                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="back">Cancel</a>
                 </div>
             </div>
-            
-            <!----------------------------- END NAVBAR 2 ------------------------------>
-
-            
-            
-            <div role="main" class="ui-content">
-               
-                <!------ Title and button + ------->
-                <div class="ui-grid-a grid-perso-a">
-                    <div class="ui-block-a block-perso-a">
-                        <h1>Reminder list</h1>
-                    </div>
-                    <div class="ui-block-b block-perso-b">
-                        <p> <a href="#popupLogin" data-rel="popup" data-position-to="window"  data-transition="pop"><img id="add-reminder" src="pictures/plus.png"/></a> </p>
-                    </div>
-                </div>
-                
-                <!------ Pop up ------->
-                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-                    <form>
-                        <div style="padding:10px 20px;">
-                            <h3>Add a reminder</h3><br>
-                            <button type="button" id="medi_button" onclick="med()" style="background-color: #81bc4a; color: #f6f6f6">Medication</button>
-                            <button type="button" id="vet_button" onclick="vetappoint()">Vet Appointment</button>
-                           
-                            <div id="medi_div" style="display: block">
-                            <label for="un" class="ui-hidden-accessible">Name:</label>
-                            <input type="text" name="medi" id="name" value="" placeholder="name" data-theme="a">
-                            <label class="ui-corner-all">
-                            <input type="radio" checked="checked" name="medi" id="rad_med" data-theme="a"> daily
-                            <span class="ui-corner-all"></span></label>
-                            <label class="ui-corner-all">
-                            <input type="radio" name="medi" id="rad_med" data-theme="a"> weekly
-                            <span class="ui-corner-all"></span>
-                            </label>
-                            <label for="un" class="ui-hidden-accessible">Notes:</label>
-                            <input type="text" name="medi" id="notes" value="" placeholder="further notes" data-theme="a">
-                            </div>
-                            <div id="vet_div" style="display: none">
-                            <label for="un" class="ui-hidden-accessible">Appointment:</label> 
-                            <input type="text" name="vet" id="name" value="" placeholder="type of appointment" data-theme="a">
-                            <label for="un" class="ui-hidden-accessible">Appointment:</label> 
-                            <input type="text" name="vet" id="location" value="" placeholder="location/adress" data-theme="a">
-                            <label for="date" class="ui-hidden-accessible">Date:</label>
-                            <input type="date" name="vet" id="date" value="" placeholder="date" data-theme="a">
-                            <label for="time" class="ui-hidden-accessible">Time:</label>
-                            <input type="time" name="vet" id="time" value="" placeholder="time">
-                            <label for="un" class="ui-hidden-accessible">Notes:</label>
-                            <input type="text" name="vet" id="vet_notes" value="" placeholder="further notes" data-theme="a">
-                            </div>                                                  
-                            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Add</button>
-                            
-                            <script>
-                        function med() 
-                                {   
-                                    document.getElementById('medi_div').style.display='block';
-                                    document.getElementById('vet_div').style.display='none';
-                                    document.getElementById('medi_button').style.backgroundColor='#81bc4a';
-                                    document.getElementById('medi_button').style.color='#f6f6f6';
-                                    document.getElementById('vet_button').style.backgroundColor='#f6f6f6';
-                                    document.getElementById('vet_button').style.color='#393939';
-                                }
-                        function vetappoint() 
-                                {                
-                                    document.getElementById('medi_div').style.display='none';
-                                    document.getElementById('vet_div').style.display='block';
-                                    document.getElementById('vet_button').style.backgroundColor='#81bc4a';
-                                    document.getElementById('vet_button').style.color='#f6f6f6';
-                                    document.getElementById('medi_button').style.backgroundColor='#f6f6f6';
-                                    document.getElementById('medi_button').style.color='#393939';
-                                    
-                                }
-               
-                            </script>
-                            
-                        </div>
-                    </form>
-                </div>
-                
-                <!------ Reminders listed ------->
-                <div>
-                    <div class="reminder-item">
-                        <p>Name: value</p>
-                        <p>Date: value</p>
-                    </div>
-                    
-                    <div class="reminder-item">
-                        <p>Name: value</p>
-                        <p>Date: value</p>
-                    </div>
-                </div>
-                
-                
-                
-            </div><!-- /content -->
-            
-            
-            
-            <div data-role="footer" data-position="fixed">
-                <div data-role="navbar" data-iconpos="bottom">
-                    <ul>
-                        <li><a href="main_page.html" data-icon="arrow-l" data-rel="back"></a></li>
-                        <li><a href="main_page.html" data-icon="home"></a></li>
-                        <li><a href="help_guide.html" data-icon="info"></a></li>
-                    </ul>
-                </div>
-            </div><!-- /footer -->
-            
-            
-            
-            
-        </div>
-        
-        <script src="js/jquery-1.11.1.min.js"></script>
-	<script src="jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
-	<script src="js/script.js"></script>
-        
-    </body>
+             
+         </div>
+          
+          
+         <!-- /content -->
+          
+          
+          
+         <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="bottom">
+               <ul>
+                  <li><a href="main_page.html" data-icon="arrow-l" data-rel="back"></a></li>
+                  <li><a href="main_page.html" data-icon="home"></a></li>
+                  <li><a href="help_guide.html" data-icon="info"></a></li>
+               </ul>
+            </div>
+         </div>
+         <!-- /footer -->
+          
+          
+      </div>
+      <script src="js/jquery-1.11.1.min.js"></script>
+      <script src="jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+      <script src="js/script.js"></script>
+      <script>
+         function med() 
+                 {   
+                     document.getElementById('medi_div').style.display='block';
+                     document.getElementById('vet_div').style.display='none';
+                     
+                 }
+         function vetappoint() 
+                 {                
+                     document.getElementById('medi_div').style.display='none';
+                     document.getElementById('vet_div').style.display='block';
+                     
+                 }
+         
+             
+      </script>
+   </body>
 </html>
+
